@@ -2,26 +2,35 @@ import * as ReactDOM from 'react-dom';
 import * as React from 'react';
 // split into seperate files
 
+export var home_title = "Home";
+export var project_title = "Projects";
+	export var websites_title = "Websites";
+	export var webtools_title = "Web-Tools";
+	export var webservices_title = "Web-Services";
+	export var ai_title = "AI";
+	export var games_title = "Games";
+	export var misc_title = "Misc";
+
+export var tools_title = "Toolsets";
+export var education_title = "Education";
+
+
 export var intro_text_dict: {[key: string]: JSX.Element} = 
 {
-	home: (<span><p>This is the root domain of Verniy.ca, please click on the links below to navigate</p>
+	[home_title]: (<span><p>This is the root domain of Verniy.ca, please click on the links below to navigate</p>
 	<a href="https://twitter.com/ECHibiki" style={{color:'red'}}>Twitter Account</a><br />
 	<a href="https://github.com/ECHibiki" style={{color:'red'}}>Github Account</a></span>),
 	
 	empty: (<span><p>This page doesn't appear to have anything on it.</p></span>)
 };
 
-export interface CardObject {category: string[] ; content: JSX.Element ; image: JSX.Element};
+export interface CardObject {  type: number ; category: string[] ; title: string ;  subtitle:string ; content: JSX.Element ; image: string};
 
-export var project_card_arr:CardObject[]= 
+export var project_card_arr:CardObject[]=
 	[
-		{category: ["#a"], content: <p>teast1<br/></p>, image: <span><img /></span>},
-		{category: ["#a"], content: <p>teast2<br/></p>, image: <span><img /></span>},
-		{category: ["#b"], content: <p>tebst3<br/></p>, image: <span><img /></span>},
-		{category: ["#b"], content: <p>tebst4<br/></p>, image: <span><img /></span>},
-		{category: ["#c"], content: <p>tecst5<br/></p>, image: <span><img /></span>},
-		{category: ["#a", "#b"], content: <p>teast<br/></p>, image: <span><img /></span>}
+		{type:1, category: ["#a"], title: "", subtitle: "", content: <p>teast1<br/></p>, image: ""}
 	]; 
+	
 export var all_text:JSX.Element = (
 	<div>
 	<h2>Todo List</h2>
