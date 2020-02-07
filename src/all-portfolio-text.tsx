@@ -11,16 +11,16 @@ export var intro_text_dict: {[key: string]: JSX.Element} =
 	empty: (<span><p>This page doesn't appear to have anything on it.</p></span>)
 };
 
-export interface CardObject {category: string[] ; content: JSX.Element};
+export interface CardObject {category: string[] ; content: JSX.Element ; image: JSX.Element};
 
 export var project_card_arr:CardObject[]= 
 	[
-		{category: ["#a"], content: <p>teast<br/></p>},
-		{category: ["#a"], content: <p>teast<br/></p>},
-		{category: ["#b"], content: <p>tebst<br/></p>},
-		{category: ["#b"], content: <p>tebst<br/></p>},
-		{category: ["#c"], content: <p>tecst<br/></p>},
-		{category: ["#a", "#b"], content: <p>teast<br/></p>},
+		{category: ["#a"], content: <p>teast1<br/></p>, image: <span><img /></span>},
+		{category: ["#a"], content: <p>teast2<br/></p>, image: <span><img /></span>},
+		{category: ["#b"], content: <p>tebst3<br/></p>, image: <span><img /></span>},
+		{category: ["#b"], content: <p>tebst4<br/></p>, image: <span><img /></span>},
+		{category: ["#c"], content: <p>tecst5<br/></p>, image: <span><img /></span>},
+		{category: ["#a", "#b"], content: <p>teast<br/></p>, image: <span><img /></span>}
 	]; 
 export var all_text:JSX.Element = (
 	<div>

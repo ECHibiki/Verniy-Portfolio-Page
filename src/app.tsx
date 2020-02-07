@@ -86,18 +86,20 @@ import * as AllText from "./all-portfolio-text";
 						</span>
 					)
 				}
-				return (
-					<span>
-						<IntroBlurb page_key="test"/>
-						<hr/>
-						{
-							card_subset.map(card_dict=>(
-									<ProjectCardFactory card_data={card_dict}/>
+				else{
+					return (
+						<span>
+							<IntroBlurb page_key="test"/>
+							<hr/>
+							{
+								card_subset.map(card_dict=>(
+										<ProjectCardFactory card_data={card_dict}/>
+									)
 								)
-							)
-						}
-					</span>
-				);
+							}
+						</span>
+					);
+				}
 			}
 		}						
 	}
@@ -109,7 +111,7 @@ import * as AllText from "./all-portfolio-text";
 			return (<span>{AllText.intro_text_dict[this.props.page_key]}</span>);
 		}
 	}
-	class ProjectCardFactory extends React.Component<{card_data: AllText.CardObject }, { }>{	
+	class ProjectCardFactory extends React.Component<{card_data: AllText.CardObject }, { }>{
 		render(){return (<span>{this.props.card_data['content']}</span>);}
 	}
 	class ProjectCard extends React.Component{

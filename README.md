@@ -3,4 +3,4 @@
 This portfolio is done in react with typescript
 <br/>
 <br/>
-Run with ``` npx webpack --watch``` after normal NPM configuration
+Run with ``` npx webpack --watch``` after normal NPM configuration. Use the default.html file to view.
