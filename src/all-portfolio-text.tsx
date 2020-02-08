@@ -10,34 +10,125 @@ export var project_title = "Projects";
 	export var ai_title = "AI";
 	export var games_title = "Games";
 	export var misc_title = "Misc";
-
 export var tools_title = "Toolsets";
 export var education_title = "Education";
 
+
+var toolset_card_style = "card p-2 m-2 toolset-card";
 
 export var intro_text_dict: {[key: string]: JSX.Element} = 
 {
 	[home_title]: (<span><p>This is the root domain of Verniy.ca, please click on the links below to navigate</p>
 	<a href="https://twitter.com/ECHibiki" style={{color:'red'}}>Twitter Account</a><br />
-	<a href="https://github.com/ECHibiki" style={{color:'red'}}>Github Account</a></span>),
+	<a href="https://github.com/ECHibiki" style={{color:'red'}}>Github Account</a>
+	<hr/>
+	<strong>Future?</strong>
+	<ul>
+		<li>eCommerce using Larvel, React, Bootstrap</li>
+		<li>Video games of sorts[Unreal Engine or C++ probably]</li>
+	</ul></span>),
 	
-	empty: (<span><p>This page doesn't appear to have anything on it.</p></span>)
+	empty: (<span><p>This page doesn't appear to have anything on it.</p></span>),
+	
+	[project_title]: (<span><p>This is a list of all projects completed ranging from video games, websites to file management.</p><hr/></span>),
+		[websites_title]: (<span><p>I've worked on 5 website related projects. These can be seen below</p></span>),
+		[webtools_title]: (<span><p>As apposed to websites, web-tools are applications on the internet that perform tasks on various sevices.</p><hr/></span>),
+		[webservices_title]: (<span><p>These services aim to enhance the backends of servers while remaining seperate from their core functions.</p><hr/></span>),
+		[ai_title]: (<span><p>Artificial intelligence from game AI all the way to Tensorflow.</p><hr/></span>),
+		[games_title]: (<span><p>Various games worked on in university.<hr/></p></span>),
+		[misc_title]: (<span><p>Various ideas worked on but never completed.</p></span>),
+	[tools_title]: (
+		<span>
+		<p>Unless otherwise noted, this is a fairly long list of toolsets and API I feel confident in, or confident enough to pick back up on a moments notice.</p>
+	<div className="d-flex flex-row flex-wrap align-items-stretch">
+		<span className={toolset_card_style}>PHP7.4<ul>
+			<li>Object Oriented PHP</li>
+			<li>Twitter and Github API</li>
+			<li>PDOs</li>
+			<li>Laravel(Inprogress)</li>
+			<li>PHPUnit(Inprogress)</li>
+		</ul></span>
+		<span className={toolset_card_style}>Python3<ul>
+			<li>Tensorflow</li>
+			<li>Numpy</li>
+			<li>PDOs</li>
+			<li>Selenium</li>
+			<li>FlaskSocketIO</li>
+			<li>requests</li>
+			<li>requests</li>
+		</ul></span>
+		<span className={toolset_card_style}>JavaScript<ul>
+			<li>Typescript</li>
+			<li>NodeJS</li>
+			<li>React</li>
+			<li>Phaser.io</li>
+			<li>jQuery</li>
+			<li>chart.js, highcharts, plot.ly</li>
+			<li>Discord API</li>
+			<li>IRC Library</li>
+			<li>WebGL</li>
+		</ul></span>
+		<span className={toolset_card_style}>CSS<ul>
+			<li>Boostrap4</li>
+		</ul></span>
+		<span className={toolset_card_style}>Java<ul>
+			<li>Google API</li>
+			<li>Android Studio</li>
+			<li>Swing</li>
+			<li>Gradle</li>
+		</ul></span>
+		<span className={toolset_card_style}>C#<ul>
+			<li>Unity Game Design</li>
+		</ul></span>
+		<span className={toolset_card_style}>C++<ul>
+			<li>OpenGL</li>
+			<li>SDL2</li>
+			<li>Select Boost Libraries</li>
+		</ul></span>
+		<span className={toolset_card_style}>Scheme/Guile<ul>
+			<li>Basics and syntax</li>
+			<li>Artanis Engine</li>
+		</ul></span>
+		<span className={toolset_card_style}>GoLang<ul>
+			<li>Basics and syntax</li>
+		</ul></span>
+		<span className={toolset_card_style}>Database<ul>
+			<li>MySQL</li>
+			<li>SQLite3</li>
+		</ul></span>	
+		<span className={toolset_card_style}>Server Software<ul>
+			<li>Linux</li>
+			<li>Nginx</li>
+			<li>Apache</li>
+		</ul></span>
+		<span className={toolset_card_style}>Version Control<ul>
+			<li>Git</li>
+			<li>GitHub</li>
+			<li>Apache</li>
+		</ul></span>
+		<span className={toolset_card_style}>Development Practices<ul>
+			<li>Agile</li>
+			<li>Test Driven Development</li>
+		</ul></span>
+	</div>
+		</span>
+		),
+	[education_title]: (<span><p>I am a batchelors of computer science graduate with a specialization in computer games. 
+		This degree gave me knowledge in graphics, 3D design software, web developement, software architectures and basic web developement. 
+		Most of my education is done on my own time in the form of projects for learning new web frameworks and langauges.</p>
+		<p>I also atended University of Toronto studying music for 2 years. There I  performaned and honed musical skills for a potential performance career.</p></span>)
 };
 
 export interface CardObject {  type: number ; category: string[] ; title: string ;  subtitle:string ; content: JSX.Element ; image: string};
 
 export var project_card_arr:CardObject[]=
 	[
-		{type:1, category: ["#a"], title: "", subtitle: "", content: <p>teast1<br/></p>, image: ""}
+		{type:1, category: ["#a", "#Featured"], title: "asd", subtitle: "fff", content: <p>teast1<br/></p>, image: ""}
 	]; 
 	
 export var all_text:JSX.Element = (
 	<div>
-	<h2>Todo List</h2>
-	<ul>
-		<li>eCommerce using Larvel, React, Bootstrap</li>
-		<li>Vidya of sorts[Unity and C++ probably]</li>
-	</ul>
+
 	<h2>Web Software</h2>
 	<h3>Web Streaming</h3>
 		<ul>

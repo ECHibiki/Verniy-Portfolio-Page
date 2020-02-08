@@ -3,6 +3,8 @@ import * as React from 'react';
 
 import * as AllText from "./all-portfolio-text";
 
+var error_image = "img/404.jpg"
+
 	// use menu controller to decide the page
 	// hovering over a menu header can create menu items
 	// clicking on menu moves to new page
@@ -150,10 +152,12 @@ import * as AllText from "./all-portfolio-text";
 		render(){
 			const page = this.state.page;
 			// if else defines the layout of tabs
+			// Either a home page with featured projects, Toolsets page(possibly branching down into more specific toolsets as needed) or an education page listing credentials
+			// an all page with all projects, but a dropdown allows you to select pages with select projects
 			// internally factories create cards based on input parameters
 			if (page == "" || page.toUpperCase() == "#" + AllText.home_title.toUpperCase()){
 				var featured_card_subset:AllText.CardObject[] = AllText.project_card_arr.filter(function(card){
-					return card['category'].includes("Featured");
+					return card['category'].includes("#Featured");
 				});
 				return (
 					<div>
@@ -167,11 +171,37 @@ import * as AllText from "./all-portfolio-text";
 						}
 					</div>
 				);
-			}
-			else if(page.toUpperCase() == "#PROJECTS"){
+			}		
+			//tools section
+			else if (page.toUpperCase() == "#" + AllText.tools_title.toUpperCase()){
+				var card_subset:AllText.CardObject[] = AllText.project_card_arr.filter(function(card){
+					return card['category'].includes("#" + AllText.tools_title);
+				});
 				return (
 					<div>
-						<IntroBlurb page_key="all"/>
+						<IntroBlurb page_key={AllText.tools_title} />
+						<hr/>
+						{
+							card_subset.map(card_dict=>(
+									<ProjectCardFactory card_data={card_dict}/>
+								)
+							)
+						}
+					</div>
+				);
+			}		
+			//education section
+			else if (page.toUpperCase() == "#" + AllText.education_title.toUpperCase()){
+				return (
+					<div>
+						<IntroBlurb page_key={AllText.education_title} />
+					</div>
+				);
+			}
+			else if(page == "#" + AllText.project_title){
+				return (
+					<div>
+						<IntroBlurb page_key={page.substring(1)}/>
 						<hr/>
 						{
 							AllText.project_card_arr.map(card_dict=>(
@@ -186,10 +216,10 @@ import * as AllText from "./all-portfolio-text";
 				var card_subset:AllText.CardObject[] = AllText.project_card_arr.filter(function(card){
 					return card['category'].includes(page);
 				});
+				// nothing here
 				if(card_subset.length == 0){
 					return (
 						<div>
-							<hr/>
 							<IntroBlurb page_key="empty"/>
 						</div>
 					)
@@ -197,8 +227,7 @@ import * as AllText from "./all-portfolio-text";
 				else{
 					return (
 						<div>
-							<IntroBlurb page_key="test"/>
-							<hr/>
+							<IntroBlurb page_key={page.substring(1)}/>
 							{
 								card_subset.map(card_dict=>(
 										<ProjectCardFactory card_data={card_dict}/>
@@ -224,8 +253,47 @@ import * as AllText from "./all-portfolio-text";
 			return (<div><h1>Verniy&#39;s Projects</h1><h4>A portfolio done in React(In progress anyways)</h4></div>);
 		}
 	}
-	class ProjectCardFactory extends React.Component<{card_data: AllText.CardObject }, { }>{
-		render(){return (<span>{this.props.card_data['content']}</span>);}
+	class ProjectCardFactory extends React.Component<{card_data: AllText.CardObject }, { img_error: boolean}>{
+		constructor(props:any){
+				super(props);
+				this.handleOnError = this.handleOnError.bind(this);
+				this.state = {img_error:false}
+			}
+			
+		handleOnError():void{
+			this.setState({img_error:true});
+		}
+		render(){
+			
+			const img_src = this.props.card_data['image']; 
+			const category_string = this.props.card_data['category'].map((value) => {return (<a href={value}> {value} </a>)});
+			const error_state = this.state.img_error;
+			
+			if(!error_state)
+				return (
+					<div>
+						<span>{this.props.card_data['title']}</span>
+						<span className="card-box">
+							<span>{this.props.card_data['subtitle']}</span>
+							<span><img onError={this.handleOnError} src={img_src} /></span>
+							<span>{this.props.card_data['content']}</span>
+							<span>{category_string}</span>
+						</span>
+					</div>
+				);
+			else
+				return (
+					<div>
+						<span>{this.props.card_data['title']}</span>
+						<span className="card-box">
+							<span>{this.props.card_data['subtitle']}</span>
+							<span><img onError={this.handleOnError} src={error_image} /></span>
+							<span>{this.props.card_data['content']}</span>
+							<span>{category_string}</span>
+						</span>
+					</div>
+				);
+		}
 	}
 	class ProjectCard extends React.Component{
 		render(){return (<span></span>);}
