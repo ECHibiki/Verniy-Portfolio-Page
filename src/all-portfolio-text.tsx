@@ -254,138 +254,116 @@ export var project_card_arr:CardObject[]=
 				<li>Generally 5-20 line stcripts</li>
 			</ul>
 			</li>
-		</ul>), image: ""}
+		</ul>), image: ""},		
 		
-	]; 
-	
-export var all_text:JSX.Element = (
-	<div>
-	
-		<h3>Userscript Website Enhancements</h3>
-
-		<p>The following scripts try to enhance certain features or remove negative ones of websites through userscripts.</p>
-
-
-	<h2>Web Tools</h2>
+		{type:1, category: ["#Web-Tools", "#Python", "#Multithreading", "#Requests"], title: "Proxy-Tester", subtitle: "Test if proxies work or not", 
+				content: 
+				(		
 		<ul>
-			<li><a className="list-item" href='https://github.com/ECHibiki/Proxy-Tester'>Proxy-Tester</a>(Prototype)</li>
+			<li><a className="list-item" href='https://github.com/ECHibiki/Proxy-Tester'>Proxy-Tester</a>
 				<ul>
 					<li className="list-item">A tool to validate if a list of proxies wroks and display a basic speed test on those that do.</li>
-					<li className="list-item">Protype made which may be expaned into full version in the future</li>
-						<ul>
-							<li>Python3</li>
-							<li>Multithreading</li>
-							<li>Requests library with SOCKS proxy</li>
-						</ul>
-				</ul>
-		</ul>
+				</ul></li>
+		</ul>), image: ""},		
+		
+		{type:1, category: ["#Web-Tools", "#Python", "#Selenium", "#Phantomjs", "#SQLite", "#Pyinstaller"], title: "Regex-Webscraper", subtitle: "Retrieve information from webpages", 
+				content: 
+				(		
 		<ul>
-			<li><a  className="list-item" href='https://github.com/ECHibiki/Regex-Webscraper'>Regex-Webscraper</a>(Prototype)</li>
+			<li><a className="list-item" href='https://github.com/ECHibiki/Regex-Webscraper'>Regex-Webscraper</a>(Prototype)</li>
 				<ul>
 					<li className="list-item">A webcrawler taking regex specified information from pages.</li>
-					<li className="list-item">Prototype uses basic mechanisms to rip content from pages leaving crawling methods to be implemented.</li>
-					<ul>
-						<li>Python3</li>
-						<li>SQLite</li>
-						<li>Selenium webdriver with phantomjs</li>	
-						<li>Pyinstaller</li>
-						<li>Regex</li>
-					</ul>
+					<li className="list-item">Uses basic mechanisms to rip content from pages, but if need be selenium can be used to execute and retrieve JS heavy pages.</li>
 			</ul>
-		</ul>	
-	<h2>Helper Bots(Chat and Websites)</h2>
-	<ul>
-		<li><a className="list-item" href="https://github.com/ECHibiki/Verniy-Bot">IRC-YouTube-Bot</a>
-			<ul>
-				<li>An IRC bot for Sageru that will read youtube links and output details such as title and author into the chat.</li>
-				<li>Done in Typescript using NodeJS with irc(https://github.com/martynsmith/node-irc) and YouTube's <em>YouTube Data API (v3)</em>. </li>
-				<ul>
-					<li> Node.js</li>
-					<li> ES2017 TypeScript</li>
-					<li>irc module</li>
-					<li>YouTube Data API (v3)</li>
-				</ul>
-			</ul>
-		</li>
-		</ul>
+		</ul>	), image: ""},		
+		
+		{type:1, category: ["#Web-Services", "#NodeJS", "#Javascript", "#TypeScript", "#IRC", "#YouTube-API", "#Bots"], title: "IRC-YouTube-Bot", subtitle: "Interpret YouTube URLs on Sageru IRC", 
+				content: 
+				(		
 		<ul>
-		<li><a className="list-item" href="https://github.com/ECHibiki/Verniy-Bot">Verniy-Bot</a>
+			<li><a className="list-item" href="https://github.com/ECHibiki/IRC-YouTube-Bot">IRC-YouTube-Bot</a>
+				<ul>
+					<li>An IRC bot for Sageru that will read youtube links and output details such as title and author into the chat.</li>
+					<li>Done in Typescript using NodeJS with irc(https://github.com/martynsmith/node-irc) and YouTube's <em>YouTube Data API (v3)</em>. </li>
+				</ul>
+			</li>
+		</ul>	), image: "img/ircyoutube.png"},		
+		
+		{type:1, category: ["#Web-Services", "#NodeJS", "#Javascript", "#TypeScript", "#Discord-API", "#Bots"], title: "Discord Bot", subtitle: "Perform some audio and text related functions with Discord API", 
+				content: 
+				(		
+		<ul>
+		<li><a className="list-item" href="https://github.com/ECHibiki/Discord-Bot">Discord Bot</a>
 			<ul>
 				<li>Discord bot made for fun. Posts messages over time and plays in voice channels. </li>
-				<li>Can either broadcast to all or specify one using either voice or chat</li>
+				<li>Can either broadcast to all or specify one using either voice or chat
 				<ul>
 					<li> Node.js</li>
 					<li> ES2017 TypeScript</li>
 					<li> Discord.js(ffmpeg-binaries with node-opus) </li>
-				</ul>
-			</ul>
-		</li>
-		</ul>
-		<ul>
-		<li><a className="list-item" href="https://github.com/ECHibiki/ViQa-Bot-Tools">ViQa-Bot-Tools</a>
-			<ul>
-				<li>See entry kissu.moe for it's usage</li>
-				<li>A simple bot for Vichan Software that allows for admins to create a bot to rebuild pages.</li>
-				<li>Upon giving the bot a login to the moderator pages it can perform basic tasks.</li>
-				<ul>
-					<li>Python3</li>
-				</ul>
-			</ul>
-		</li>
-		</ul>
-		<ul>
-			<li><a className="list-item" href="https://github.com/ECHibiki/ViQa-Site-Tracker">ViQa-Site-Tracker</a>
-			<ul>
-				<li>See entry kissu.moe for it's usage</li>
-				<li>The use for ViQa-Bot-Tools was to fill in a gap in this text scrapping bot's usage</li>
-				<li>Given a list of typical vichan Imageboards with an API it will insert directly into a database new posts on a website</li>
-				<ul>
-					<li>Python3<ul><li>MySQLdb</li></ul></li>
-					
-				</ul>
-			</ul>
-		</li>
-		</ul>
-
-	<h2>Machine learning and AI Projects</h2>
-		<ul>
-			<li><a className="list-item" href="http://datasets.verniy.ca/">StreetSigns-et-al.-reCaptcha-solver</a>
-				<ul>
-					<li>A machine learning exercise to solve Google's reCaptcha</li>
-					<li>Code hidden for internet security</li>
-					<li>Uses a very noisy dataset of 17,000 images to get a passable accuracy to invalidate no javascript captchas</li>
-					<li>Datasets, documentation and statistics are available. The application itself however, is not.</li>
-					<ul>
-						<li>Python Tensorflow API V1.8</li>
-						<li>Python Flask</li>
-						<li>PyInstaller</li>
-						<li>PHP data aquisition</li>
-						<li>Bootstrap4 styling</li>
-						<li>SQL Data Storage</li>
-						<li>Javascript chart libraries and Canvas chart libraries</li>
-					<ul>
-						<li>Highcharts</li>
-						<li>plot.ly</li>
-						<li>chart.js</li> 
-						<li>(an edited)origami.js</li>
-					</ul>
-					<li>Typescript driven userscripts to send data and solve data</li>
-				</ul>
+				</ul></li>
 			</ul></li>
-			</ul>
-			
+		
+		</ul>	), image: "img/discord.png"},		
+		
+		{type:1, category: ["#Web-Services", "#Python", "#Bots"], title: "ViQa-Bot-Tools", subtitle: "A bot for automating ViQa functions", 
+				content: 
+				(		
+			<ul>
+			<li><a className="list-item" href="https://github.com/ECHibiki/ViQa-Bot-Tools">ViQa-Bot-Tools</a>
+				<ul>
+					<li>Used to enhance ViQa's functionality</li>
+					<li>A simple bot for Vichan Software that allows for admins to create a bot to rebuild pages.</li>
+					<li>Upon giving the bot a login to the moderator pages it can perform basic tasks.</li>
+				</ul>
+			</li>
+			</ul>	), image: ""},		
+		
+		{type:1, category: ["#Web-Services", "#Python", "#MySQLdb", "#Bots"], title: "ViQa-Site-Tracker", subtitle: "Retrieves information from websites of similar design", 
+				content: 
+				(		
+			<ul>
+				<li><a className="list-item" href="https://github.com/ECHibiki/ViQa-Site-Tracker">ViQa-Site-Tracker</a>
+				<ul>
+					<li>See entry kissu.moe for it's usage</li>
+					<li>The use for ViQa-Bot-Tools was to fill in a gap in this text scrapping bot's usage</li>
+					<li>Given a list of typical vichan Imageboards with an API it will insert directly into a database new posts on a website</li>
+				</ul>
+			</li>
+			</ul>), image: "img/vsitetrack.png"},		
+		
+		{type:1, category: ["#AI", "#Python", "#Tensorflow", "#Flask", "#PyInstaller", "#PHP", "#MySQL", "#Bootstrap", 
+		"#TypeScript", "#Userscripts", "#chart.js", "#plot.ly", "#Highcharts"],	title: "reCaptcha-solver", subtitle: "Captcha solver for Google ReCaptcha", 
+				content: 
+				(		
+				<ul>
+					<li><a className="list-item" href="http://datasets.verniy.ca/">StreetSigns-et-al.-reCaptcha-solver</a>
+						<ul>
+							<li>A machine learning exercise to solve Google's reCaptcha</li>
+							<li>Code hidden for internet security</li>
+							<li>Uses a very noisy dataset of 17,000 images to get a passable accuracy to invalidate no javascript captchas</li>
+							<li>Datasets, documentation and statistics are available. The application itself however, is not.</li>
+							<li>Typescript driven userscripts to send solved data</li>
+						</ul>
+					</li>
+				</ul>), image: "img/StreetSigns.png"},		
+		
+		{type:1, category: ["#AI", "#Python", "#Numpy", "#Text"],	title: "Naive Bayes Text Classification", subtitle: "Classify Text as Possitive or Negative", 
+				content: 
+				(		
 			<ul>
 			<li><a className="list-item" href="https://github.com/KNG-Scherezade/Naive-Bayes-Text-Classification">Naive Bayes Text Classification</a>
 				<ul>
 					<li>Course project to clasify text data into possitives and negatives</li>
 					<li>Done to learn the basics of Naive Bayes</li>
 					<li>Used stopword checking, grammar rules and other linguistic techniques to obtain a strong accuracy of 90% when evaluated</li>
-					<ul>
-						<li>Python3</li>
-						<li>Python Numpy</li>
-					</ul>
-				</ul></li>
 				</ul>
+			</li>
+			</ul>), image: "img/naivebayes.png"},		
+		
+		{type:1, category: ["#AI", "#Games", "#C#", "#Unity"],	title: "AI Pathfinding", subtitle: "Unity Project Using Pathfinding Algorithms", 
+				content: 
+				(		
 			<ul>
 			<li><a className="list-item" href="https://github.com/KNG-Scherezade/AI-Pathfinding">Game AI Pathfinding</a>
 				<ul>
@@ -393,13 +371,12 @@ export var all_text:JSX.Element = (
 					<li>Done to learn various forms of search heuristics
 					<ul><li>A*</li><li>Null Heuristic</li><li>Cluster Search</li></ul></li>
 					<li>Made use of exsting unity libraries and packages to create a vissualy and technically impressive assignment graded 100% by a TA</li>
-					<ul>
-						<li>Unity C#</li>
-						<li>Linux and Windows Support</li>
-					</ul>
 				</ul></li>
-		</ul>
-	<h2>Games</h2>
+		</ul>), image: "img/pathfinding.png"},		
+		
+		{type:1, category: ["#Websites", "#Games", "#Javascript", "#TypeScript", "#Bootstrap", "#PhaserIO", "#SocketIO", "#Python", "#Flask"],	title: "Ultimate TicTacToe Online", subtitle: "A full-stack javascript game", 
+				content: 
+				(		
 		<ul>
 			<li><a className="list-item" href="http://verniy.ca/u-tictactoe">Ultimate TicTacToe Online</a>
 				<ul>
@@ -411,27 +388,28 @@ export var all_text:JSX.Element = (
 					<li>On two connections to socket a game is formed</li>
 					<li>Players battle with legal moves on a 9 by 9 board</li>
 					<li>Game finishes on disconnects or player victory</li>
-					<ul>
-						<li>Flask-SocketIO Python server</li>
-						<li>SocketIO Javascript client</li>
-						<li>Phaser3 Javascript Canvas client</li>
-						<li>Typescript</li>					
-						<li>Bootstrap4 styling</li>
-					</ul>
 				</ul></li>
 		</ul>
-			<ul>
+		), image: "img/uttt.png"},		
+		
+		{type:1, category: ["#Games", "#Unity", "#HRDP", "C#"],	title: "WindSway-HDRP", subtitle: "Experimentation with Unity HDRP", 
+				content: 
+				(		
+		<ul>
 			<li><a className="list-item" href="https://github.com/ECHibiki/WindSway-HDRP">WindSway-HDRP</a>
 				<ul>
 					<li>A personal project to learn more about the advanced features of Unity</li>
 					<li>Implements shader graphs for grass and tree leaf swaying</li>
 					<li>Implements Unity's High Definition Rendering Pipeline(HDRP) to get the most out of a simple environment</li>
-					<ul>
-						<li>Unity C#</li>
-						<li>Unity HDRP</li>
 				</ul>
-			</ul></li>
+			</li>
 		</ul>
+		
+		), image: "img/hdrp.png"},		
+		
+		{type:1, category: ["#Games", "#Unity", "#Agile", "C#"],	title: "BattleCats", subtitle: "A Game in Unity", 
+				content: 
+				(		
 		<ul>
 			<li><a className="list-item" href="https://github.com/KNG-Scherezade/BattleCats">BattleCats</a>
 				<ul>
@@ -439,83 +417,84 @@ export var all_text:JSX.Element = (
 					<li>Uses controller(PS4) to navigate through levels while inside a rolling yarn</li>
 					<li><a href='http://pomoroad.com/battlecats/'>http://pomoroad.com/battlecats/</a></li>
 					<ul>
-						<li>Unity C#</li>
 						<li>Focused on physics and all camera scripting</li>
 						<li>Also focused on player station interactions</li>
 						<li>Designed the controls</li>
 						<li>Small focus on ingame UI</li>
 						<li>Minor art modifications</li>
-						<li>Implemented all online functionality(Work in progress)</li>
+					</ul>
 				</ul>
-			</ul></li>
-
-	<h2>3D Demos</h2>
-
-	<ul>
-		<li><a className="list-item" href="https://github.com/KNG-Scherezade/Comp371-Clone">Procedural Generation Project</a>
-
-		<ul>
-			<li>Working with a group, the goal was to create a procedurally generated world users can walk through.</li>
-			<li>Procedural tree generation was a main component.</li>
-			<ul>
-				<li>C++</li>
-				<li>OpenGL</li>
-				<li>cmake</li>
-			</ul>
+			</li>
 		</ul>
-		</li>
-
-	</ul>	
-
-
+		), image: "img/battlecats.png"},		
 		
-	<h2>File Managment</h2>
+		{type:1, category: ["#Games", "#OpenGL", "#C++"],	title: "Procedural 3D World", subtitle: "An OpenGL project for procedural generation", 
+				content: 
+				(		
+			<ul>
+				<li><a className="list-item" href="https://github.com/KNG-Scherezade/Comp371-Clone">Procedural Generation Project</a>
+
+					<ul>
+						<li>Working with a group, the goal was to create a procedurally generated world users can walk through.</li>
+						<li>Procedural tree generation was a main component.</li>
+					</ul>
+				</li>
+
+			</ul>	
+		), image: "img/c371.png"},		
+		
+		{type:1, category: ["#Misc", "#Java", "#Google-API"],	title: "Google-Drive-Permission-Set", subtitle: "Uses Google's API to set folder permisions", 
+				content: 
+				(		
 		<ul>
-			<li><a className="list-item" href='https://github.com/KNG-Scherezade/Google-Drive-Permission-Set'>Google-Drive-Permission-Set</a></li>
+			<li><a className="list-item" href='https://github.com/KNG-Scherezade/Google-Drive-Permission-Set'>Google-Drive-Permission-Set</a>
 				<ul>
 					<li className="list-item">A tool to automate permission setting on Google Drive using a Java Swing console interface</li>
 					<li className="list-item">Sets up to 1000 permissions using Batches through the Java Drive API</li>
-						<ul>
-							<li>Java Swing</li>
-							<li>Java Driven Google API</li>
-							<li>Gradle</li>
-						</ul>
 				</ul>
-			</ul>
-			<ul>
-			<li><a  className="list-item" href='https://github.com/KNG-Scherezade/Folder-Creation'>Folder-Creator</a></li>
+			</li>
+		</ul>
+		), image: "img/gdps.png"},		
+		
+		{type:1, category: ["#Misc", "#Batch", "#Windows"],	title: "Windows-Folder-Creator", subtitle: "A batch script to automate folder creation.", 
+				content: 
+				(		
+		<ul>
+			<li><a  className="list-item" href='https://github.com/KNG-Scherezade/Folder-Creation'>Folder-Creator</a>
 				<ul>
 					<li className="list-item">Simple batch script designed for my father to create 300 folders(called class1, class2... classn)</li>
 					<li className="list-item">Allows custom subdirectories</li>
-					<ul>
-						<li>Batch</li>
-					</ul>
-			</ul>
+				</ul>
+			</li>
 		</ul>
+		), image: "img/folder-creator.png"},		
 		
-
-
-
-	<h2>Miscellaneous Projects</h2>
-	<p>Code is either available on request, hidden in the depths of my computer or listed on my other profile somewhere.</p>
-	<ul>
-		<li className="list-item">CrewForSail</li>
-		<ul>
-		<li className="list-item">An application designed to create a listing for sailors in need of crew</li>
+		{type:1, category: ["#WebSites", "#Misc", "#Mobile", "#PHP", "#Android"],	title: "CrewForSail", subtitle: "My first project", 
+				content: 
+				(		
 			<ul>
-				<li>Android Studio Java</li>
-				<li>Apache PHP server</li>
-				<li>Python file creation</li>
+				<li className="list-item">CrewForSail
+					<ul>
+						<li className="list-item">My first software project</li>
+						<li className="list-item">An application designed to create a listing for sailors in need of crew</li>
+						<li className="list-item">Android application and a website acompanying it</li>	
+					</ul></li>
 			</ul>
-		</ul>
-		<li className="list-item">Unlistable games</li>
+		), image: "img/crew4sail.png"},		
+		
+		{type:1, category: ["#Games", "#Misc", "#C++", "#SDL2", "#Boost", "ZLib"],	title: "Misc Games", subtitle: "Compilation of dropped projects", 
+				content: 
+				(		
 		<ul>
-		<li className="list-item">Various attempts at breaking into the pornographic games scene</li>
+		<li className="list-item">Various attempts at making commercial games</li>
 			<ul>
+				<li>SDL Games that were dropped because art didn't meet my standards</li>
 				<li>C++ SDL2</li>
 				<li>Boost Library</li>
-				<li>ZLib(minizip)</li>
+				<li>ZLib{"(minizip)"}</li>
 			</ul>
 		</ul>
+		), image: "img/misc-games.png"}
 		
-	</ul></ul></div>);
+	]; 
+	
