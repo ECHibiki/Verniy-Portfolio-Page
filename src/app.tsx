@@ -53,18 +53,18 @@ var error_image = "img/404.jpg"
 		
 		render(){
 			return (
-			<div>
+			<nav className="nav-bar-portfolio">
 				<MenuHeader about={AllText.home_title} />
 				<MenuDropDownHeader about={AllText.project_title} />
 				<MenuHeader about={AllText.tools_title} />
 				<MenuHeader about={AllText.education_title} />
-			</div>);
+			</nav>);
 		}
 	}
 	class MenuDropDownHeader extends React.Component<{about:string} & React.HTMLAttributes<HTMLElement>, {is_hover:boolean}> implements MenuInterface{
 		constructor(props:any){
 			super(props);
-			//this.handleClick = this.handleClick.bind(this);
+			this.handleClick = this.handleClick.bind(this);
 			this.handleMouseOver = this.handleMouseOver.bind(this);
 			this.handleMouseOut = this.handleMouseOut.bind(this);
 			this.state = {is_hover: false};
@@ -73,7 +73,9 @@ var error_image = "img/404.jpg"
 		componentDidMount() {}
 		componentWillUnmount(){};
 		
-		handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>){};
+		handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>){
+			location.hash =  this.props.about;
+		};
 		
 		handleMouseOver(event: React.MouseEvent<HTMLElement, MouseEvent>){
 			this.setState({is_hover: true});
@@ -88,19 +90,23 @@ var error_image = "img/404.jpg"
 			if(hover && about == AllText.project_title){
 				return (
 					<span onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOut}>
-						<span className="menu-header" onClick={this.handleClick}><a href={"#" + about}>{about}<em className="fa fa-caret-up"></em></a></span>
-						<MenuItem about={AllText.websites_title} />
-						<MenuItem about={AllText.webtools_title} />
-						<MenuItem about={AllText.webservices_title} />
-						<MenuItem about={AllText.ai_title} />
-						<MenuItem about={AllText.games_title} />
-						<MenuItem about={AllText.misc_title} />
+						<div className="menu-header" onClick={this.handleClick}>
+							<a href={"#" + about}>{about}&nbsp;<em className="fa fa-caret-up"></em></a>
+						</div>
+						<div className="dropdown-portfolio d-flex flex-column">
+							<MenuItem about={AllText.websites_title} />
+							<MenuItem about={AllText.webtools_title} />
+							<MenuItem about={AllText.webservices_title} />
+							<MenuItem about={AllText.ai_title} />
+							<MenuItem about={AllText.games_title} />
+							<MenuItem about={AllText.misc_title} />
+						</div>
 					</span>);
 			}
 			else{
 				return (
 					<span onMouseEnter={this.handleMouseOver} onMouseLeave={this.handleMouseOut}>
-						<span className="menu-header" ><a href={"#" + about}>{about}<em className="fa fa-caret-down"></em></a></span>
+						<div className="menu-header" ><a href={"#" + about}>{about}&nbsp;<em className="fa fa-caret-down"></em></a></div>
 					</span>);
 			}
 		}
@@ -108,29 +114,35 @@ var error_image = "img/404.jpg"
 	class MenuHeader extends React.Component<{about:string} & React.HTMLAttributes<HTMLElement>> implements MenuInterface{
 		constructor(props:any){
 			super(props);
+			this.handleClick = this.handleClick.bind(this);
 		}
 
 		componentDidMount() {}
 		componentWillUnmount(){};
 		
-		handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>){};
+		handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>){
+			location.hash =  this.props.about;
+		};
 				
 		render(){
-			return (<span><span className="menu-header"><a href={"#" + this.props.about}>{this.props.about}</a></span></span>); 
+			return (<span><div onClick={this.handleClick} className="menu-header"><a href={"#" + this.props.about}>{this.props.about}</a></div></span>); 
 		}
 	}	
 	class MenuItem extends React.Component<{about:string} & React.HTMLAttributes<HTMLElement>, {}> implements MenuInterface{
 		constructor(props:any){
 			super(props);
+			this.handleClick = this.handleClick.bind(this);
 		}
 		
 		componentDidMount() {}
 		componentWillUnmount(){};
 		
-		handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>):void{};
+		handleClick(event: React.MouseEvent<HTMLElement, MouseEvent>):void{
+			location.hash =  this.props.about;
+		};
 		
 		render(){
-			return (<span className="menu-item"><a href={"#" + this.props.about}>{this.props.about}</a></span>);
+			return (<span onClick={this.handleClick} className="menu-item" ><a href={"#" + this.props.about}>{this.props.about}</a></span>);
 		}
 	
 	
@@ -157,36 +169,41 @@ var error_image = "img/404.jpg"
 			// internally factories create cards based on input parameters
 			if (page == "" || page.toUpperCase() == "#" + AllText.home_title.toUpperCase()){
 				var featured_card_subset:AllText.CardObject[] = AllText.project_card_arr.filter(function(card){
-					return card['category'].includes("#Featured");
+					return card['category'].map(function(cat){return cat.toLowerCase()}).includes("#featured");
 				});
 				return (
 					<div>
 						<IntroBlurb page_key={AllText.home_title} />
 						<hr/>
+						<h2>Featured Projects</h2>
+						<div className="cards-container d-flex flex-row flex-wrap align-items-stretch justify-content-between">
 						{
 							featured_card_subset.map(card_dict=>(
 									<ProjectCardFactory card_data={card_dict}/>
 								)
 							)
 						}
+						</div>
 					</div>
 				);
 			}		
 			//tools section
 			else if (page.toUpperCase() == "#" + AllText.tools_title.toUpperCase()){
 				var card_subset:AllText.CardObject[] = AllText.project_card_arr.filter(function(card){
-					return card['category'].includes("#" + AllText.tools_title);
+					return card['category'].map(function(cat){return cat.toLowerCase()}).includes("#" + AllText.tools_title.toLowerCase());
 				});
 				return (
 					<div>
 						<IntroBlurb page_key={AllText.tools_title} />
 						<hr/>
+						<div className="cards-container d-flex flex-row flex-wrap align-items-stretch justify-content-between">
 						{
 							card_subset.map(card_dict=>(
 									<ProjectCardFactory card_data={card_dict}/>
 								)
 							)
 						}
+						</div>
 					</div>
 				);
 			}		
@@ -203,19 +220,22 @@ var error_image = "img/404.jpg"
 					<div>
 						<IntroBlurb page_key={page.substring(1)}/>
 						<hr/>
+						<div className="cards-container d-flex flex-row flex-wrap align-items-stretch justify-content-between">
 						{
 							AllText.project_card_arr.map(card_dict=>(
 									<ProjectCardFactory card_data={card_dict}/>
 								)
 							)
 						}
+						</div>
 					</div>
 				);
 			}
 			else{
 				var card_subset:AllText.CardObject[] = AllText.project_card_arr.filter(function(card){
-					return card['category'].includes(page);
+					return card['category'].map(function(cat){return cat.toLowerCase()}).includes(page.toLowerCase());
 				});
+
 				// nothing here
 				if(card_subset.length == 0){
 					return (
@@ -228,12 +248,14 @@ var error_image = "img/404.jpg"
 					return (
 						<div>
 							<IntroBlurb page_key={page.substring(1)}/>
+							<div className="cards-container d-flex flex-row flex-wrap align-items-stretch justify-content-between">
 							{
 								card_subset.map(card_dict=>(
 										<ProjectCardFactory card_data={card_dict}/>
 									)
 								)
 							}
+							</div>
 						</div>
 					);
 				}
@@ -250,15 +272,16 @@ var error_image = "img/404.jpg"
 	}
 	class PageHeader extends React.Component{
 		render(){
-			return (<div><h1>Verniy&#39;s Projects</h1><h4>A portfolio done in React(In progress anyways)</h4></div>);
+			return (<div className="title-head"><h1>Verniy&#39;s Projects</h1><h4>A portfolio done in React</h4></div>);
 		}
 	}
-	class ProjectCardFactory extends React.Component<{card_data: AllText.CardObject }, { img_error: boolean}>{
+	
+	class ProjectCardSingleImage extends React.Component<{card_data: AllText.CardObject }, { img_error: boolean}>{
 		constructor(props:any){
-				super(props);
-				this.handleOnError = this.handleOnError.bind(this);
-				this.state = {img_error:false}
-			}
+			super(props);
+			this.handleOnError = this.handleOnError.bind(this);
+			this.state = {img_error:false}
+		}
 			
 		handleOnError():void{
 			this.setState({img_error:true});
@@ -269,30 +292,41 @@ var error_image = "img/404.jpg"
 			const category_string = this.props.card_data['category'].map((value) => {return (<a href={value}> {value} </a>)});
 			const error_state = this.state.img_error;
 			
-			if(!error_state)
-				return (
-					<div>
-						<span>{this.props.card_data['title']}</span>
-						<span className="card-box">
-							<span>{this.props.card_data['subtitle']}</span>
-							<span><img onError={this.handleOnError} src={img_src} /></span>
-							<span>{this.props.card_data['content']}</span>
-							<span>{category_string}</span>
-						</span>
+			var img_el = (<a href={img_src}><img onError={this.handleOnError} src={img_src} className="card-img"/></a>);
+			if(error_state){
+				img_el = (<img src={error_image} className="card-img"/>);
+			}	
+			
+			return (
+				<span className="portfolio-card-holder">
+					<div className="portfolio-card-title"><h4>{this.props.card_data['title']}</h4></div>
+					<div className="portfolio-card-box card">
+						<div className="portfolio-card-subtitle"><h5>{this.props.card_data['subtitle']}</h5></div>
+						<div className="portfolio-card-img-container">{img_el}</div>
+						<div className="portfolio-card-contents">{this.props.card_data['content']}</div>
+						<div className="portfolio-card-categories">{category_string}</div>
 					</div>
-				);
-			else
+				</span>
+			);
+		}
+	}
+	class ProjectCardFactory extends React.Component<{card_data: AllText.CardObject }, {}>{
+		constructor(props:any){
+				super(props);
+			}
+			
+		handleOnError():void{
+			this.setState({img_error:true});
+		}
+		render(){
+			if(this.props.card_data['type'] == 1){
 				return (
-					<div>
-						<span>{this.props.card_data['title']}</span>
-						<span className="card-box">
-							<span>{this.props.card_data['subtitle']}</span>
-							<span><img onError={this.handleOnError} src={error_image} /></span>
-							<span>{this.props.card_data['content']}</span>
-							<span>{category_string}</span>
-						</span>
-					</div>
+					<ProjectCardSingleImage card_data={this.props.card_data} />
 				);
+			}
+			else{
+				return(<p>card error</p>);
+			}
 		}
 	}
 	class ProjectCard extends React.Component{

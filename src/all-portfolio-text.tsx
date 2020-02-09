@@ -30,12 +30,12 @@ export var intro_text_dict: {[key: string]: JSX.Element} =
 	
 	empty: (<span><p>This page doesn't appear to have anything on it.</p></span>),
 	
-	[project_title]: (<span><p>This is a list of all projects completed ranging from video games, websites to file management.</p><hr/></span>),
+	[project_title]: (<span><p>This is a list of all projects completed ranging from video games, websites to file management.</p></span>),
 		[websites_title]: (<span><p>I've worked on 5 website related projects. These can be seen below</p></span>),
-		[webtools_title]: (<span><p>As apposed to websites, web-tools are applications on the internet that perform tasks on various sevices.</p><hr/></span>),
-		[webservices_title]: (<span><p>These services aim to enhance the backends of servers while remaining seperate from their core functions.</p><hr/></span>),
-		[ai_title]: (<span><p>Artificial intelligence from game AI all the way to Tensorflow.</p><hr/></span>),
-		[games_title]: (<span><p>Various games worked on in university.<hr/></p></span>),
+		[webtools_title]: (<span><p>As apposed to websites, web-tools are applications on the internet that perform tasks on various sevices.</p></span>),
+		[webservices_title]: (<span><p>These services aim to enhance the backends of servers while remaining seperate from their core functions.</p></span>),
+		[ai_title]: (<span><p>Artificial intelligence from game AI all the way to Tensorflow.</p></span>),
+		[games_title]: (<span><p>Various games worked on in university.</p></span>),
 		[misc_title]: (<span><p>Various ideas worked on but never completed.</p></span>),
 	[tools_title]: (
 		<span>
@@ -83,6 +83,7 @@ export var intro_text_dict: {[key: string]: JSX.Element} =
 		<span className={toolset_card_style}>C++<ul>
 			<li>OpenGL</li>
 			<li>SDL2</li>
+			<li>ZLip</li>
 			<li>Select Boost Libraries</li>
 		</ul></span>
 		<span className={toolset_card_style}>Scheme/Guile<ul>
@@ -123,32 +124,23 @@ export interface CardObject {  type: number ; category: string[] ; title: string
 
 export var project_card_arr:CardObject[]=
 	[
-		{type:1, category: ["#a", "#Featured"], title: "asd", subtitle: "fff", content: <p>teast1<br/></p>, image: ""}
-	]; 
-	
-export var all_text:JSX.Element = (
-	<div>
-
-	<h2>Web Software</h2>
-	<h3>Web Streaming</h3>
-		<ul>
-			<li><a className="list-item" href="https://github.com/ECHibiki/KisSync">KisSync</a>
-			<ul>
-				<li>A fork of streaming software, <a href="https://github.com/calzoneman/sync">Sync</a></li>
-				<li>Enhanced chat features to allow for anonymous chatting</li>
-				<li>Resulted in a need to examine moderation tools, chat user interface and chat feature mechanisms</li>
-				<li>Run on an Ubuntu VPN
-			<ul>
-				<li>NodeJS</li>
-				<li>NPM</li>
-				<li>Linux Systemd and Node Forever</li>
-			</ul></li>
-			</ul></li>
-		</ul>
-	<h3>Imageboards</h3>
-		<ul>
+		{type:1, category: ["#Websites", "#Featured", "#NodeJS", "#Linux", "#Git"], title: "KisSync", subtitle: "Video Synchronization over Network", 
+			content: 
+			(<ul>
+				<li>
+					<a className="list-item" href="https://github.com/ECHibiki/KisSync">KisSync</a>
+					<ul>
+						<li>A fork of streaming software, <a href="https://github.com/calzoneman/sync">Sync</a></li>
+						<li>Enhanced chat features to allow for anonymous chatting</li>
+						<li>Resulted in a need to rework moderation tools user interface and chat feature mechanisms on both front and back-end</li>
+					</ul>
+				</li>
+			</ul>), image: "img/kissync.png"},	
+			
+		{type:1, category: ["#Websites", "#Featured", "#PHP", "#Linux", "#Nginx", "#Twig", "#JQuery", "#Git", "#MySQL", "#Social"], title: "ViQa", subtitle: "Anonymous Chat Platform", 
+			content: 
+			(<ul>
 			<li><a className="list-item" href="https://github.com/ECHibiki/ViQa">ViQa</a>
-
 			<ul>
 				<li>A forked version of <a href="https://github.com/vichan-devel/vichan">vichan software</a>.</li>
 				<li>Worked to enhance moderation tools
@@ -156,14 +148,11 @@ export var all_text:JSX.Element = (
 					<li>Scrape webpages for proxies</li>
 					<li>Utilize recaptcha alternative for less impact on good users</li>
 					<li>Expand existing functionality for moderators</li>
-					<li>Run on an Ubuntu VPN
-					<ul>
-					<li>PHP5 => PHP7.4</li>
-					<li>Twig Framework</li>
-					<li>GoLang</li>
-					<li>Computer Vision Frameworks</li>
 					</ul>
-					</li>
+				</li>
+				<li>Security
+					<ul>
+					<li>Integration of a <a href="https://github.com/ECHibiki/captchouli">GoLang Captcha</a></li>
 					</ul>
 				</li>
 				<li>Improved design
@@ -176,27 +165,37 @@ export var all_text:JSX.Element = (
 					</ul>
 				</li>
 			</ul></li>
-		</ul>
-		<ul>
-		<li><a className="list-item" href="https://github.com/ECHibiki/Kotatsu">kotatsu</a>
+		</ul>), image: "img/kissu.png"},	
+			
+		{type:1, category: ["#Websites", "#Featured", "#Artanis", "#Scheme", "#git", "#Social"], title: "Kotatsu", subtitle: "Aquired Anonymous Chat Platform", 
+				content: 
+				(		
 			<ul>
-				<li>An imageboard running on the experimental Artanis engine</li>
-				<li>Acquired from individual unable to continue working
-					<li>Upgraded from Artanis 0.3 to 0.4</li>
-					<li>Problem solved to fix resulting errors</li>
-					<li>Compensated for problems in Artanis Software and resulting memory leaks</li>
-					<li>Run on an Ubuntu VPN</li>
+			<li><a className="list-item" href="https://github.com/ECHibiki/Kotatsu">kotatsu</a>
+				<ul>
+					<li>An imageboard running on the experimental Artanis engine</li>
+					<li>Acquired from individual unable to continue working
+						<li>Upgraded from Artanis 0.3 to 0.4</li>
+						<li>Problem solved to fix resulting errors</li>
+						<li>Compensated for existing problems in software</li>
+					</li>
+				</ul></li>
+		</ul>), image: "img/4taba2.png"},	
+			
+		{type:1, category: ["#Web-Services", "#Featured", "#PHP", "#MySQL", "#Cron", "#Twitter", "#Javascript"], title: "TweetQueue", subtitle: "A Web Service to Post to Twitter", 
+				content: 
+				(		
+			<ul>
+				<li><a className="list-item" href="http://verniy.ca/twitter/">TweetQueue</a>
 					<ul>
-						<li>Guile Scheme</li>
-						<li>Artanis Engine</li>
-						<li>Nginx Configuration</li>
+						<li>Create a Tweet queue sending user created Tweets to Twitter over a period of time.</li>
 					</ul>
 				</li>
-			</ul></li>
-		</ul>
-
-	<h3>Twitter Projects</h3>
-
+		</ul>), image: "img/tweetqueue.png"},
+		
+		{type:1, category: ["#Websites", "#Featured", "#PHP", "#MySQL", "#Social", "#Twitter", "#Javascript", "#Bootstrap"], title: "TwitterBoard", subtitle: "Designed Anonymous TwitterBoard", 
+				content: 
+				(		
 		<ul>
 			<li><a className="list-item" href="http://boards.verniy.ca/">Anonymous Twitter Board</a>
 
@@ -204,22 +203,12 @@ export var all_text:JSX.Element = (
 				<li>A social media website that uses Twitter&#39;s API to create an anonymous version of Twitter.</li>
 				<li>Using an offsite website to act as an intermediate users can post Tweets through a host's Twitter profile allowing them to share thoughts without having to setup an account.</li>
 				<li> Essentially changes Twitter from it&#39;s intended pupose for using it as a blog into an independent meeting place.</li>
-				<ul><li>PHP</li><li>SQL</li><li>Twitter API</li><li>Vanila Javascript with AJAX</li><li>Bootstrap4</li><li>Cron</li></ul>
-			</ul>
-			</li>
-
-
-			<li><a className="list-item" href="http://verniy.ca/erotweet/">TweetQueue</a>
-
-			<ul>
-				<li>Create a Tweet queue sending user created Tweets to Twitter over a period of time.</li>
-				<li>Run on shared Hosting</li>
-				<ul><li>PHP</li><li>SQL</li><li>Vanilla Javascript</li><li>Twitter API</li><li>Cron</li></ul>
-			</ul>
-			</li>
-		</ul>
-	<h3>4Chan Projects</h3>
-
+			</ul></li>
+		</ul>), image: "img/twitterboard.png"},		
+		
+		{type:1, category: ["#Web-Tools", "#Featured", "#Javascript", "#TypeScript", "#AJAX", "#UserScripts"], title: "4Free-FSE", subtitle: "Extention on an extention", 
+				content: 
+				(		
 		<ul>
 			<li><a className="list-item" href="http://verniy.ca/scripts/4Free-FSE-Versions/4-Free-1.3.5.user.js">4Free-FSE</a>
 
@@ -228,41 +217,55 @@ export var all_text:JSX.Element = (
 				<ul><li> ES5 TypeScript with AJAX</li></ul>
 			</ul>
 			</li>
+		</ul>), image: "img/4free.png"},	
+		
+		{type:1, category: ["#WebSites", "#Featured", "#Javascript", "#AJAX", "#PHP", "#MySQL", "#JSON", "#Bootstrap"], title: "Ban Page Logger", subtitle: "Logging a text-data into SQL", 
+				content: 
+				(		
+		<ul>
 			<li><a className="list-item" href="http://bans.verniy.ca">4Chan Ban Page Logger</a>
 			<ul>
+				<li>Contents are offensive(it's a public log of people prohibited from being on a website).</li>
 				<li>A scraper of a particular 4chan page with information submitted by the staff on who is getting banned for what.</li>
-				<li>Run on shared Hosting</li>
-				<ul><li>PHP</li><li>Vanilla Javascript with AJAX</li><li>SQL</li><li>Boostrap4</li><li>Cron</li></ul>
 			</ul>
 			</li>
-			<li><a className="list-item" href="http://bans.verniy.ca">4Chan Ban Page Logger - Backup Logger</a>
+		</ul>), image: "img/bans.png"},	
+		
+		{type:1, category: ["#Web-Tools", "#Github", "#Git", "#PHP"], title: "Github Backups", subtitle: "Backups done through Github API", 
+				content: 
+				(		
+		<ul>
+			<li><a className="list-item" href="https://github.com/ECHibiki/Backup_bans.verniy.xyz">4Chan Ban Page Logger - Backup Logger</a>
 			<ul>
-				<li>Disabled</li>
 				<li>A script that runs a scan on all of the files in the project directory. 
 				When it detects that a file has been altered it will use the github API to push commits onto a backup repository</li>
-				<li>Run on shared Hosting</li>
-				<ul><li>PHP</li><li>Github API</li><li>Cron</li></ul>
 			</ul>
 			</li>
-		</ul>
-
-
+		</ul>), image: "img/bans-backup.png"},
+		
+		{type:1, category: ["#Web-Tools", "#Misc", "#UserScript", "#Javascript"], title: "Miscellaneous UserScripts", subtitle: "Various Javascript Files of misc function", 
+				content: 
+				(		
+		<ul>
+			<li><a className="list-item" href="http://verniy.ca/scripts/misc">Misc Scripts</a>
+			<ul>
+				<li>Convinience enhancers for websites.</li>
+				<li>Titles are relatively explanitory.</li>
+				<li>Generally 5-20 line stcripts</li>
+			</ul>
+			</li>
+		</ul>), image: ""}
+		
+	]; 
+	
+export var all_text:JSX.Element = (
+	<div>
+	
 		<h3>Userscript Website Enhancements</h3>
 
 		<p>The following scripts try to enhance certain features or remove negative ones of websites through userscripts.</p>
 
-		<ul>
-			<li><a className="list-item" href="http://verniy.ca/scripts/misc">Miscellaneous Scripts</a>
-			<ul>
-				<li>Convinience enhancers for websites. Read code to see functions, titles are relatively explanitory. Done in Vanilla Javascript.</li>
-			</ul>
-			</li>
-			<li><a className="list-item" href="http://verniy.ca/scripts/misc/4Free-FSE-Individual/">4Free-FSE Individual packages</a>
-			<ul>
-				<li>Individual packages of 4F-FSE done in Javascript with AJAX.</li>
-			</ul>
-			</li>
-		</ul>
+
 	<h2>Web Tools</h2>
 		<ul>
 			<li><a className="list-item" href='https://github.com/ECHibiki/Proxy-Tester'>Proxy-Tester</a>(Prototype)</li>
@@ -514,9 +517,5 @@ export var all_text:JSX.Element = (
 				<li>ZLib(minizip)</li>
 			</ul>
 		</ul>
-		<li className="list-item">AnonIrc Clone<del>(6667)</del>(Currently no ports)
-		<ul>
-			<li>just a clone of someone else&#39;s project. Inactive due to lack of interest.</li>
-		</ul>
-		</li>
+		
 	</ul></ul></div>);
