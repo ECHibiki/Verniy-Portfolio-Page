@@ -96,7 +96,6 @@ var error_image = "img/404.jpg"
 						<div className="dropdown-portfolio d-flex flex-column">
 							<MenuItem about={AllText.websites_title} />
 							<MenuItem about={AllText.webtools_title} />
-							<MenuItem about={AllText.webservices_title} />
 							<MenuItem about={AllText.ai_title} />
 							<MenuItem about={AllText.games_title} />
 							<MenuItem about={AllText.misc_title} />
@@ -184,6 +183,12 @@ var error_image = "img/404.jpg"
 							)
 						}
 						</div>
+						<h2>Future Projects</h2>
+						<ul>
+							<li>eCommerce using Larvel, React, Bootstrap</li>
+							<li>Symfony Rewrite of ViQa</li>
+							<li>Video games of sorts[Unreal Engine or C++ probably]</li>
+						</ul>
 					</div>
 				);
 			}		
@@ -283,15 +288,18 @@ var error_image = "img/404.jpg"
 			this.state = {img_error:false}
 		}
 			
+		componentWillReceiveProps(props:any):void{
+			this.setState({img_error:false});
+		}			
+			
 		handleOnError():void{
 			this.setState({img_error:true});
 		}
+		
 		render(){
-			
 			const img_src = this.props.card_data['image']; 
 			const category_string = this.props.card_data['category'].map((value) => {return (<a href={value}> {value} </a>)});
 			const error_state = this.state.img_error;
-			
 			var img_el = (<a href={img_src}><img onError={this.handleOnError} src={img_src} className="card-img"/></a>);
 			if(error_state){
 				img_el = (<img src={error_image} className="card-img"/>);
@@ -349,4 +357,6 @@ var error_image = "img/404.jpg"
 	}
 	
 	ReactDOM.render(<Portfolio />, document.getElementById('rctroot'));
-	window.onhashchange = function(){PageControllerSingleton.get_pmi_singleton().swapPage(location.hash)}
+	window.onhashchange = function(){
+		PageControllerSingleton.get_pmi_singleton().swapPage(location.hash)
+	}
