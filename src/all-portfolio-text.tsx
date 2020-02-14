@@ -1,6 +1,6 @@
 import * as ReactDOM from 'react-dom'; 
 import * as React from 'react';
-// split into seperate files
+// split into separate files
 
 export var home_title = "Home";
 export var project_title = "Projects";
@@ -40,20 +40,20 @@ export var intro_text_dict: {[key: string]: JSX.Element} =
 	
 	[project_title]: (<span><p>This is a list of all projects completed ranging from video games, websites to file management.</p></span>),
 		[websites_title]: (<span><p>I've worked on many website related projects. These can be seen below</p></span>),
-		[webtools_title]: (<span><p>Web-tools are what I view as userscripts, backup softare and anything else that acts to support a primary application.</p></span>),
+		[webtools_title]: (<span><p>Web-tools are what I view as userscripts, backup software and anything else that acts to support a primary application.</p></span>),
 		[ai_title]: (<span><p>Artificial intelligence from game AI all the way to academic AI in the form of Tensorflow.</p></span>),
 		[games_title]: (<span><p>Various games worked on either in university or my own time.</p></span>),
 		[misc_title]: (<span><p>Various ideas worked on but not of large significance or at the level of a releasable product.</p></span>),
 	[tools_title]: (
 		<span>
-		<p>This is a fairly long list of toolsets and API I feel confident in, or confident enough to pick back up on a moments notice. Exceptions will be inprogress where I am in the process of writting projects to learn about the language or framework. This list is a more detailed version of my resume.</p>
+		<p>This is a fairly long list of toolsets and API I feel confident in, or confident enough to pick back up on a moments notice. Exceptions will be in progress where I am in the process of writing projects to learn about the language or framework. This list is a more detailed version of my resume.</p>
 	<div className="d-flex flex-row flex-wrap align-items-stretch">
 		<span className={toolset_card_style}>PHP7.4<ul>
 			<li>Object Oriented PHP</li>
 			<li>Twitter and Github API</li>
 			<li>PDOs</li>
-			<li>Laravel(Inprogress)</li>
-			<li>PHPUnit(Inprogress)</li>
+			<li>Laravel(In progress)</li>
+			<li>PHPUnit(In progress)</li>
 		</ul></span>
 		<span className={toolset_card_style}>Python3<ul>
 			<li>Tensorflow</li>
@@ -121,9 +121,9 @@ export var intro_text_dict: {[key: string]: JSX.Element} =
 	</div>
 		</span>
 		),
-	[education_title]: (<span><p>I hold a Batchelors of Computer Science(BCompSc) from Concordia University with a specialization in computer games. 
-		In addition to experience with agile and test driven development practices, this degree gave me knowledge in graphics, 3D design software, web developement, P2P networking through Unity, software architectures and basic web developement. 
-		Most of my education is done on my own time in the form of projects for learning new web frameworks and langauges.</p>
+	[education_title]: (<span><p>I hold a Bachelors of Computer Science(BCompSc) from Concordia University with a specialization in computer games. 
+		In addition to experience with agile and test driven development practices, this degree gave me knowledge in graphics, 3D design software, web development, P2P networking through Unity, software architectures and basic web development. 
+		Most of my education is done on my own time in the form of projects for learning new web frameworks and languages.</p>
 		<p>I also attended University of Toronto studying music for 2 years. There I  performed and honed musical skills for a potential performance career.</p></span>)
 };
 
@@ -174,7 +174,7 @@ export var project_card_arr:CardObject[]=
 			</ul></li>
 		</ul>), image: "img/kissu.png"},	
 			
-		{type:1, category: ["#Websites",  "#Artanis", "#Scheme", "#Git", "#Social", "#Fork", "#Nginx"], title: "Kotatsu", subtitle: "Aquired Anonymous Chat Platform", 
+		{type:1, category: ["#Websites",  "#Artanis", "#Scheme", "#Git", "#Social", "#Fork", "#Nginx"], title: "Kotatsu", subtitle: "Acquired Anonymous Chat Platform", 
 				content: 
 				(		
 			<ul>
@@ -209,11 +209,11 @@ export var project_card_arr:CardObject[]=
 			<ul>
 				<li>A social media website that uses Twitter&#39;s API to create an anonymous version of Twitter.</li>
 				<li>Using an offsite website to act as an intermediate users can post Tweets through a host's Twitter profile allowing them to share thoughts without having to setup an account.</li>
-				<li> Essentially changes Twitter from it&#39;s intended pupose for using it as a blog into an independent meeting place.</li>
+				<li> Essentially changes Twitter from it&#39;s intended purpose for using it as a blog into an independent meeting place.</li>
 			</ul></li>
 		</ul>), image: "img/twitterboard.png"},		
 		
-		{type:1, category: ["#Web-Tools",  "#Javascript", "#TypeScript", "#AJAX", "#UserScripts"], title: "4Free-FSE", subtitle: "Extention on an extention", 
+		{type:1, category: ["#Web-Tools",  "#Javascript", "#TypeScript", "#AJAX", "#UserScripts"], title: "4Free-FSE", subtitle: "Extension on an extension", 
 				content: 
 				(		
 		<ul>
@@ -232,9 +232,9 @@ export var project_card_arr:CardObject[]=
 		<ul>
 			<li><a className="list-item" href="http://bans.verniy.ca/">Sample Site</a>
 			<ul>
-				<li>A scraper of a webpage displaynig information submitted by staff on who is getting banned for what.</li>
+				<li>A scraper of a webpage displaying information submitted by staff on who is getting banned for what.</li>
 				<li>Javascript or PHP front-end generation</li>
-				<li>Search form for finding paticular entries</li>
+				<li>Search form for finding particular entries</li>
 				<li>Data saved in both MySQL and JSON files</li>
 				<li><strong>Contents are offensive</strong>(it's a public log of people prohibited from being on a website).</li>
 			</ul>
@@ -330,7 +330,7 @@ export var project_card_arr:CardObject[]=
 				content: 
 				(		
 				<ul>
-					<li><a className="list-item" href="datasets.verniy.ca/">Sample Site</a>
+					<li><a className="list-item" href="http://datasets.verniy.ca/">Sample Site</a>
 						<ul>
 							<li>A machine learning exercise to solve a weaker version of Google's reCaptcha</li>
 							<li>Code hidden for security</li>
@@ -341,13 +341,13 @@ export var project_card_arr:CardObject[]=
 					</li>
 				</ul>), image: "img/StreetSigns.png"},		
 		
-		{type:1, category: ["#AI", "#Python", "#Numpy", "#Text"],	title: "Naive Bayes Text Classification", subtitle: "Classify Text as Possitive or Negative", 
+		{type:1, category: ["#AI", "#Python", "#Numpy", "#Text"],	title: "Naive Bayes Text Classification", subtitle: "Classify Text as Positive or Negative", 
 				content: 
 				(		
 			<ul>
 			<li><a className="list-item" href="https://github.com/KNG-Scherezade/Naive-Bayes-Text-Classification">GitHub Link</a>
 				<ul>
-					<li>Course project to clasify product review data into positive and negative impressions</li>
+					<li>Course project to classify product review data into positive and negative impressions</li>
 					<li>Done to learn the basics of Naive Bayes</li>
 					<li>Used stopword checking, grammar rules and other linguistic techniques to obtain a strong accuracy of 90% when evaluated</li>
 				</ul>
@@ -363,7 +363,7 @@ export var project_card_arr:CardObject[]=
 					<li>Course work to make an AI follow a path in a 3D environment</li>
 					<li>Done to learn various forms of search heuristics
 					<ul><li>A*</li><li>Null Heuristic</li><li>Cluster Search</li></ul></li>
-					<li>Made use of exsting unity libraries and packages to create a visualy and technically impressive assignment</li>
+					<li>Made use of existing unity libraries and packages to create a visually and technically impressive assignment</li>
 					<li>Graded 100% by a TA</li>
 				</ul></li>
 		</ul>), image: "img/pathfinding.png"},		
@@ -433,7 +433,7 @@ export var project_card_arr:CardObject[]=
 			</ul>	
 		), image: "img/c371.png"},		
 		
-		{type:1, category: ["#Misc", "#Java", "#Google-API"],	title: "Google-Drive-Permission-Set", subtitle: "Use Google API to Set Folder Permisions", 
+		{type:1, category: ["#Misc", "#Java", "#Google-API"],	title: "Google-Drive-Permission-Set", subtitle: "Use Google API to Set Folder Permissions", 
 				content: 
 				(		
 		<ul>
@@ -465,8 +465,8 @@ export var project_card_arr:CardObject[]=
 		<ul>
 			<li><a className="list-item" href="http://verniy.ca/scripts/misc">Script Folder</a>
 			<ul>
-				<li>Convinience enhancers for websites.</li>
-				<li>Titles are relatively explanitory.</li>
+				<li>Convenience enhancers for websites.</li>
+				<li>Titles are relatively explanatory.</li>
 				<li>Generally 5-20 line scripts</li>
 			</ul>
 			</li>
@@ -480,7 +480,7 @@ export var project_card_arr:CardObject[]=
 					<ul>
 						<li className="list-item">My first software project</li>
 						<li className="list-item">An application designed to create a listing for sailors in need of crew</li>
-						<li className="list-item">Android application and a website acompanying it</li>	
+						<li className="list-item">Android application and a website accompanying it</li>	
 					</ul></li>
 			</ul>
 		), image: "img/crew4sail.png"},		
@@ -506,7 +506,7 @@ export var project_card_arr:CardObject[]=
 		<li className="list-item"><a href="https://github.com/ECHibiki/Verniy-Portfolio-Page">GitHub Link</a></li>
 			<ul>
 				<li>A React based portfolio with tagging systems</li>
-				<li>Aims to show off what I know about software developement</li>
+				<li>Aims to show off what I know about software development</li>
 				<li>Cards designed to show projects with tags</li>
 				<li>menu user interface</li>
 				<li>TypeScript for better OOP</li>
